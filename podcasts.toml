@@ -1,0 +1,34 @@
+# The podcasts to download. Each [section] is one YouTube channel or playlist.
+# To add a podcast: copy a block, give it a short lowercase key, set its channel URL.
+#
+#   channel        YouTube channel (https://www.youtube.com/@handle) or playlist URL   (required)
+#   name           display name                                                        (optional)
+#   min_minutes    skip videos shorter than this, e.g. clips and shorts                (default 20)
+#   title_include  only keep videos whose title matches this regular expression        (optional)
+#   title_exclude  drop videos whose title matches this regular expression             (optional)
+#   languages      caption languages to try, in order                    (default ["en", "en-US", "en-GB"])
+#
+# Write regular expressions in 'single quotes' so backslashes work: '#\d+'.
+
+[doac]
+name = "The Diary of a CEO"
+channel = "https://www.youtube.com/@TheDiaryOfACEO"
+min_minutes = 40
+
+[jre]
+name = "The Joe Rogan Experience"
+channel = "https://www.youtube.com/@joerogan"
+min_minutes = 40
+title_include = '^Joe Rogan Experienced? #\d+'   # numbered episodes; skips the MMA Show, clips and specials
+
+[lex]
+name = "Lex Fridman Podcast"
+channel = "https://www.youtube.com/@lexfridman"
+min_minutes = 40
+title_include = '#\d+'   # numbered podcast episodes; skips lectures, clips and game streams
+
+# [huberman]
+# name = "Huberman Lab"
+# channel = "https://www.youtube.com/@hubermanlab"
+# min_minutes = 40
+# languages = ["en"]   # for a podcast in another language, e.g. ["de"]
